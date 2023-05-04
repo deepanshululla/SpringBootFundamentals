@@ -14,7 +14,7 @@ public class InMemoryCourseDAO implements BaseDAO<Course>{
 
 	private Map<Integer, Course> courses = new ConcurrentHashMap<>();
 	private static AtomicInteger nextId = new AtomicInteger(1);
-	
+
 	public boolean update(Course updateObject) {
 		return courses.computeIfPresent(updateObject.getId(), (k, oldValue) -> updateObject) != null;
 	}
@@ -29,7 +29,7 @@ public class InMemoryCourseDAO implements BaseDAO<Course>{
 		newObject.setId(newId);
 		newObject.setCode("InMem" + newObject.getCode());
 		courses.put(newId, newObject);
-		
+
 		return newObject;
 	}
 
@@ -40,17 +40,16 @@ public class InMemoryCourseDAO implements BaseDAO<Course>{
 	public List<Course> getAll() {
 		return new ArrayList<Course>(courses.values());
 	}
-	
+
 	void deleteStore() {
 		courses = null;
 		nextId.set(0);
 	}
-	
 	public void createStore() {
 		courses = new ConcurrentHashMap<Integer, Course>();
 		nextId.set(1);
 	}
-	
+
 	public Map<Integer, Course> getCourses() {
 		return courses;
 	}

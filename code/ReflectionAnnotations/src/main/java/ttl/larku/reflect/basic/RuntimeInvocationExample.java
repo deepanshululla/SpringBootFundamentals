@@ -94,6 +94,7 @@ class OtherClass {
 	}
 
 	public void doStuff(int i) {
+      System.out.println("my test vim bindng");
 	}
 
 	public String doStuff(String stuff) {
@@ -105,13 +106,15 @@ class OtherClass {
 	public String toString() {
 		return "OtherClass [i=" + i + "]";
 	}
-	
+
 	public void fun(String s, Integer ...integers ) {
-		
 		for(Integer it : integers) {
 			System.out.println(it);
 		}
-		
+		for(Integer it : integers) {
+			System.out.println(it);
+		}
+
 	}
 
 }
