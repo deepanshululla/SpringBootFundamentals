@@ -1,6 +1,7 @@
 package ttl.larku.service;
 
 import ttl.larku.dao.BaseDAO;
+import ttl.larku.domain.Course;
 import ttl.larku.domain.Student;
 
 import java.time.LocalDate;
@@ -9,6 +10,8 @@ import java.util.List;
 public class StudentService {
 
     private BaseDAO<Student> studentDAO;
+
+    private BaseDAO<Course> courseDAO;
 
     public StudentService() {
     }

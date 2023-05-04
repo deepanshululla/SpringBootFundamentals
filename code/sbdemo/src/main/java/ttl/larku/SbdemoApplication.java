@@ -25,7 +25,6 @@ public class SbdemoApplication {
 @Component
 class MyRunner implements CommandLineRunner
 {
-
 	@Autowired
 	private StudentService studentService;
 
