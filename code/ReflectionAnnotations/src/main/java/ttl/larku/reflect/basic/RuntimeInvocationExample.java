@@ -32,8 +32,11 @@ public class RuntimeInvocationExample {
 //			}
 
 
-			Constructor<?> ctor = clazz.getDeclaredConstructor();
-			Object clazzInstance = ctor.newInstance();
+//			Constructor<?> ctor = clazz.getDeclaredConstructor();
+//			Object clazzInstance = ctor.newInstance();
+
+			Constructor<?> ctor = clazz.getDeclaredConstructor(int.class);
+			Object clazzInstance = ctor.newInstance(10);
 
 			// Find the doStuff Method
 			Method method = clazz.getMethod("doStuff", String.class);
@@ -73,6 +76,8 @@ public class RuntimeInvocationExample {
 		}
 
 		Field field = clazz.getDeclaredField("i");
+		//oc.i = 100;
+		field.setAccessible(true);
 
 		field.set(clazzInstance, 100);
 	}

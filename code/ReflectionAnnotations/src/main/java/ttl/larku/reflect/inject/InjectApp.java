@@ -9,7 +9,10 @@ public class InjectApp {
 
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException, NoSuchMethodException {
         SomeController sc = BeanFactory.getBean(SomeController.class);
-
         sc.doStuff();
+
+//        SomeController scBad = new SomeController();
+
+//        scBad.doStuff();
     }
 }
