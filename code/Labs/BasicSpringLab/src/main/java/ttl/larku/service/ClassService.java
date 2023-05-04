@@ -3,13 +3,16 @@ package ttl.larku.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import ttl.larku.dao.BaseDAO;
 import ttl.larku.domain.Course;
 import ttl.larku.domain.ScheduledClass;
 
 public class ClassService {
 
+
     private CourseService courseService;
+
     private BaseDAO<ScheduledClass> classDAO;
 
 

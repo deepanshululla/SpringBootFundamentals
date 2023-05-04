@@ -1,13 +1,21 @@
 package ttl.larku.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ttl.larku.dao.BaseDAO;
 import ttl.larku.domain.Course;
 
+import javax.annotation.Resource;
 import java.util.List;
 
+
+@Service
 public class CourseService {
 
     //TODO - Dependency Injection needed here.
+    //    We can do autowired here or in the larkconfig define it as a bean
+    @Autowired
+//    @Resource(name="courseDAO")
     private BaseDAO<Course> courseDAO;
 
     public Course createCourse(String code, String title) {

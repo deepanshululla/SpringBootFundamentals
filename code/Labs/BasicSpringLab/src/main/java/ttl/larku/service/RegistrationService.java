@@ -1,5 +1,10 @@
 package ttl.larku.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import ttl.larku.dao.BaseDAO;
+import ttl.larku.domain.Course;
 import ttl.larku.domain.ScheduledClass;
 import ttl.larku.domain.Student;
 
@@ -7,19 +12,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 //TODO - Need to make this into a bean
+
+@Service
 public class RegistrationService {
 
     //TODO - something required here
+
+    @Autowired
     private CourseService courseService;
+    @Autowired
     private StudentService studentService;
+    @Autowired
     private ClassService classService;
 
+
+//    @Autowired
     public RegistrationService() {
-        courseService = new CourseService();
-        studentService = new StudentService();
-        classService = new ClassService();
+//        courseService = new CourseService();
+//        studentService = new StudentService();
+//        classService = new ClassService();
     }
 
+//    @Autowired
+//    public RegistrationService(CourseService courseService, StudentService studentService,
+//                               ClassService classService) {
+//        this.courseService = courseService;
+//        this.studentService = studentService;
+//        this.classService = classService;
+//    }
 
     public ScheduledClass addNewClassToSchedule(String courseCode, String startDate, String endDate) {
         ScheduledClass sClass = classService.createScheduledClass(courseCode, startDate, endDate);
