@@ -65,6 +65,7 @@ public class RestClientSpringTest {
         ParameterizedTypeReference<RestResultGeneric<Student>>
                 ptr = new ParameterizedTypeReference<RestResultGeneric<Student>>() {
         };
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));

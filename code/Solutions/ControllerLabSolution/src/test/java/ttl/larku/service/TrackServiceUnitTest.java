@@ -6,6 +6,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 import ttl.larku.dao.BaseDAO;
 import ttl.larku.dao.inmemory.InMemoryTrackDAO;
 import ttl.larku.domain.Track;
@@ -17,6 +19,7 @@ import static org.mockito.ArgumentMatchers.anyString;
  * @author whynot
  */
 @ExtendWith(MockitoExtension.class)
+//@MockitoSettings(strictness = Strictness.LENIENT)
 public class TrackServiceUnitTest {
 
     @Mock
@@ -47,6 +50,6 @@ public class TrackServiceUnitTest {
 
         Track newTrack = trackService.createTrack("Sweet Memory");
 
-        Mockito.verify(trackDAO).create(any());
+        Mockito.verify(trackDAO).create(any(Track.class));
     }
 }
