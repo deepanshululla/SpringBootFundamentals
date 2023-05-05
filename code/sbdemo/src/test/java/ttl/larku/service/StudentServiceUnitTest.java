@@ -36,7 +36,7 @@ import static org.mockito.Mockito.never;
 //Then Mockito won't get upset with unused Mocks.
 //Probably better to leave it off and get rid of
 //unused mocks.
-@MockitoSettings(strictness = Strictness.LENIENT)
+//@MockitoSettings(strictness = Strictness.LENIENT)
 @Tag("unit")
 public class StudentServiceUnitTest {
 

@@ -3,6 +3,7 @@ package ttl.larku.jconfig;
 import ttl.larku.dao.BaseDAO;
 import ttl.larku.dao.inmemory.InMemoryCourseDAO;
 import ttl.larku.dao.inmemory.InMemoryStudentDAO;
+import ttl.larku.dao.jpahibernate.JPAStudentDAO;
 import ttl.larku.domain.Course;
 import ttl.larku.domain.Student;
 
@@ -87,6 +88,17 @@ public class LarkUTestDataConfig {
 
     public BaseDAO<Student> studentDAOWithInitData() {
         InMemoryStudentDAO dao = new InMemoryStudentDAO();
+
+        dao.create(student1());
+        dao.create(student2());
+        dao.create(student3());
+        dao.create(student4());
+
+        return dao;
+    }
+
+    public BaseDAO<Student> jpaStudentDAOWithInitData() {
+        JPAStudentDAO dao = new JPAStudentDAO();
 
         dao.create(student1());
         dao.create(student2());

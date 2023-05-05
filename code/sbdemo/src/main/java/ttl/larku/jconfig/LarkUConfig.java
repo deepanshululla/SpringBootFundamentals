@@ -35,7 +35,8 @@ public class LarkUConfig {
     @Bean(name = "studentDAO")
     @Profile("production")
     public BaseDAO<Student> studentDAOJpa() {
-        return jpaStudentDAO();
+//        return jpaStudentDAO();
+        return testDataConfig.jpaStudentDAOWithInitData();
     }
 
     @Bean

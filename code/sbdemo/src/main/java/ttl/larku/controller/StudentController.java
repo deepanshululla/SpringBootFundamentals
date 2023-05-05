@@ -23,8 +23,12 @@ import java.util.List;
 @RequestMapping("/students")
 public class StudentController {
 
-    @Autowired
+//    @Autowired
     private StudentService studentService;
+
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
     @GetMapping
     public List<Student> getAllStudent() {
@@ -39,7 +43,7 @@ public class StudentController {
     }
 
     @PostMapping
-    public Student addStudent(@RequestBody Student student, @RequestParam("name") String name) {
+    public Student addStudent(@RequestBody Student student) {
         Student newStudent = studentService.createStudent(student);
 
         return newStudent;
