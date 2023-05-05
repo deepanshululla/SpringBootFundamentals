@@ -28,7 +28,7 @@ public class TrackController {
         return ResponseEntity.ok(tracks);
     }
 
-    @GetMapping(value = "/{id:\\d+}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<?> getTrack(@PathVariable("id") int id) {
         Track track = trackService.getTrack(id);
         if (track == null) {

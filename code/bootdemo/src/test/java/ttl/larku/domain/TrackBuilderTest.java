@@ -1,4 +1,4 @@
-package larku.domain;
+package ttl.larku.domain;
 
 
 import org.junit.jupiter.api.Test;
