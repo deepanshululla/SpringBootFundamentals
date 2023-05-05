@@ -11,6 +11,7 @@ import ttl.larku.dao.inmemory.InMemoryTrackDAO;
 import ttl.larku.domain.Track;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 
 /**
  * @author whynot
@@ -42,7 +43,7 @@ public class TrackServiceUnitTest {
         Track track = Track.title("Sweet Memory")
                 .build();
 
-        Mockito.when(trackDAO.create(any())).thenReturn(track);
+        Mockito.when(trackDAO.create(any(Track.class))).thenReturn(track);
 
         Track newTrack = trackService.createTrack("Sweet Memory");
 
