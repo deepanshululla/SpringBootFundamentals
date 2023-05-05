@@ -1,6 +1,9 @@
 package ttl.larku.domain;
 
+import org.springframework.stereotype.Component;
+
 import java.time.Duration;
+
 
 public class Track {
 	public enum Format

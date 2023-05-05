@@ -1,12 +1,16 @@
 package ttl.larku.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ttl.larku.dao.BaseDAO;
 import ttl.larku.domain.Track;
 
 import java.util.List;
 
+
 public class TrackService {
 
+    @Autowired
     private BaseDAO<Track> trackDAO;
 
     public Track createTrack(String title) {
